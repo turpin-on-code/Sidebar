@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #3b82f6;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+p {
+    font-size: 1.5rem;
+    width: 40%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    padding: 2em;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+}
+
+.open {
+    font-size: 3rem;
+    color: #565656;
+    cursor: pointer;
+    width: 40%;
+}
+
+.open:hover {
+    color: #3b82f6;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    background: #bfdbfe;
+    padding-top: 60px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 0.5s;
+    width: 0;
+    overflow-x: hidden;
+}
+
+.sidebar a {
+    font-size: 25px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #3b82f6;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidebar a:hover {
+    color: #172554;
+}
+
+.sidebar .closeSidebarButton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #eab308;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sidebar .closeSidebarButton:hover {
+    color: #713f12;
+}
+
+.sidebar.is-open {
+    width: 250px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    height: 300px;
+    padding: 25px;
+    
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
+
+li {
+    border-bottom: 0.5px solid #fde047;
+}
+
+@media screen and (max-width: 500px) {
+    .sidebar.is-open {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .open {
+        font-size: 2em;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 960px) {
+    .sidebar.is-open + .main {
+        /* move main */
+        margin-left: 250px;
+        transition: margin-left 0.5s;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .open {
+        font-size: 2em;
+    }
+}
